@@ -1,0 +1,21 @@
+os: osx
+env:
+  global:
+  - CXX=g++
+language: node_js
+node_js:
+- 10
+jdk:
+- oraclejdk8
+before_script:
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then travis_retry npm install -g eslint; fi
+- brew install yarn
+- npm install -g eslint
+- npm install -g jasmine-core
+- npm install -g karma
+- npm install -g karma-coverage
+- npm install -g karma-jasmine
+- npm install -g karma-jasmine-jquery
+- npm install -g karma-phantomjs-launcher
+script:
+- node -v
