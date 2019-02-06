@@ -1,2 +1,2 @@
 # Test aws codebuild --update
-* test build
+* test build2
