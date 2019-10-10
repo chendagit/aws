@@ -20,8 +20,7 @@ before_script:
 - npm install -g sfdx-cli
 script:
 - node -v
-- if [[ "$TRAVIS_PULL_REQUEST" = "false" ]]; 
-  then
+- if [[ "$TRAVIS_PULL_REQUEST" = "false" ]];
     if [[ sfdx force:lightning:test:install22 ]];
     then
         echo "install OK";
