@@ -22,10 +22,11 @@ script:
 - node -v
 - if [[ "$TRAVIS_PULL_REQUEST" = "false" ]];
   then
-    sfdx force:lightning:test:install22;
-  elif [[ $? > 0 ]];
-  then
-    npm install -g eslint;
+    if [[sfdx force:lightning:test:install22 ]];
+    then
+        echo "install OK";
+    else
+        npm install -g eslint;
   fi
 # - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then travis_retry npm install -g eslint; fi
 # - if [[ "$TRAVIS_PULL_REQUEST" = "true" ]]; then
