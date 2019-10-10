@@ -28,7 +28,7 @@ script:
 #   fi
 
 - if [[ "$TRAVIS_PULL_REQUEST" = "true"]]; then
-    sfdx force:lightning:test:install22;
+    npm install -g sfdx-cli;
   else
     npm install -g eslint;
   fi
