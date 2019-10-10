@@ -17,5 +17,9 @@ before_script:
 - npm install -g karma-jasmine
 - npm install -g karma-jasmine-jquery
 - npm install -g karma-phantomjs-launcher
+- npm install -g sfdx-cli
 script:
 - node -v
+- if [[ travis_retry sfdx force:package:install --package 04tJ00000006jCA -u ciorg -w 10]]; then
+    sfdx force:lightning:test:install;
+  fi
