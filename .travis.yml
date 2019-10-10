@@ -20,9 +20,10 @@ before_script:
 # - npm install -g sfdx-cli
 script:
 - node -v
-- if [[ "$TRAVIS_PULL_REQUEST" = "false" ]]; then
+- if [[ "$TRAVIS_PULL_REQUEST" = "false" ]];
+  then
     sfdx force:lightning:test:install22;
-  elif [[ $? > 0 ]]
+  elif [[ $? > 0 ]];
   then
     npm install -g eslint;
   fi
