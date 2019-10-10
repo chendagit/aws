@@ -9,7 +9,7 @@ jdk:
 - oraclejdk8
 before_script:
 - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then travis_retry npm install -g eslint; fi
-- brew install yarn
+# - brew install yarn
 - npm install -g eslint
 - npm install -g jasmine-core
 - npm install -g karma
