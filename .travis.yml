@@ -17,7 +17,7 @@ before_script:
 # - npm install -g karma-jasmine
 # - npm install -g karma-jasmine-jquery
 # - npm install -g karma-phantomjs-launcher
-# - npm install -g sfdx-cli
+- npm install -g sfdx-cli
 script:
 - node -v
 - if [[ "$TRAVIS_PULL_REQUEST" = "false" ]];
