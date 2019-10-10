@@ -33,16 +33,16 @@ script:
       else
           echo "$answer does not have an error log at this time."
   fi
-- if [[ "$TRAVIS_PULL_REQUEST" = "false" ]]
+- if [[ "$TRAVIS_PULL_REQUEST" = "false" ]];
       then
-          if [[ sfdx force:lightning:test:install22 ]]
+          if [[ sfdx force:lightning:test:install22 ]];
               then
-                  echo "install OK"
+                  echo "install OK";
               else
-                  npm install -g eslint
+                  npm install -g eslint;
           fi
       else
-            echo "install Failed"
+            echo "install Failed";
   fi
 # - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then travis_retry npm install -g eslint; fi
 # - if [[ "$TRAVIS_PULL_REQUEST" = "true" ]]; then
