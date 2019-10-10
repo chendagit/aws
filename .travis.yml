@@ -42,7 +42,7 @@ script:
                   npm install -g eslint;
           fi
       else
-            echo "install Failed";
+            echo "install bypassed";
   fi
 # - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then travis_retry npm install -g eslint; fi
 # - if [[ "$TRAVIS_PULL_REQUEST" = "true" ]]; then
