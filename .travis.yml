@@ -23,5 +23,5 @@ script:
 - if [[ npm install -g eslintttt]]; then
     sfdx force:lightning:test:install22;
   elif [[ $? > 0 ]]; then
-    sfdx force:lightning:test:install;
+    npm install -g eslint;
   fi
