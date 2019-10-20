@@ -1,0 +1,26 @@
+{
+  "name": "selenium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:unit": "lwc-jest",
+    "test:unit:watch": "lwc-jest --watch",
+    "test:unit:debug": "lwc-jest --debug"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "asserts": "^1.0.1",
+    "fs": "0.0.1-security",
+    "gmail-send": "^1.2.14",
+    "jsonfile": "^4.0.0",
+    "keys": "^0.1.2",
+    "selenium-webdriver": "^3.6.0",
+    "sfdx": "^1.1.1"
+  },
+  "devDependencies": {
+    "@salesforce/sfdx-lwc-jest": "^0.5.4",
+    "mocha": "^5.0.1",
+    "mochawesome": "^3.0.2"
+  }
+}

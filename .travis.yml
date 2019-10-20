@@ -20,30 +20,34 @@ before_script:
 # - npm install -g sfdx-cli
 script:
 - node -v
-- echo "Which error log are you checking today? "
-  read answer
-  if [ -f /opt/logs/$answer*.errors ]
-      then
-          if [ -s /opt/logs/$answer*.errors ]
-              then
-                  echo "Content is present in the $answer error log file."
-              else
-                  echo "No errors are present in the $answer error log file."
-          fi
-      else
-          echo "$answer does not have an error log at this time."
-  fi
-- if [[ "$TRAVIS_PULL_REQUEST" = "false" ]];
-      then
-          if [[ sfdx force:lightning:test:install22 ]];
-              then
-                  echo "install OK";
-              else
-                  npm install -g eslint;
-          fi
-      else
-            echo "install bypassed";
-  fi
+- npm install
+- npm install -g audit-ci
+# Security check for vulnerabilities
+- if audit-ci -h -a 813 ; then echo Passed; else npm audit; fi
+# - echo "Which error log are you checking today? "
+#   read answer
+#   if [ -f /opt/logs/$answer*.errors ]
+#       then
+#           if [ -s /opt/logs/$answer*.errors ]
+#               then
+#                   echo "Content is present in the $answer error log file."
+#               else
+#                   echo "No errors are present in the $answer error log file."
+#           fi
+#       else
+#           echo "$answer does not have an error log at this time."
+#   fi
+# - if [[ "$TRAVIS_PULL_REQUEST" = "false" ]];
+#       then
+#           if [[ sfdx force:lightning:test:install22 ]];
+#               then
+#                   echo "install OK";
+#               else
+#                   npm install -g eslint;
+#           fi
+#       else
+#             echo "install bypassed";
+#   fi
 # - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then travis_retry npm install -g eslint; fi
 # - if [[ "$TRAVIS_PULL_REQUEST" = "true" ]]; then
 #     npm install -g sfdx-cli ;
