@@ -23,7 +23,7 @@ script:
 - npm install
 - npm install -g audit-ci
 # Security check for vulnerabilities
-- if audit-ci -h -a 813; then echo Passed; else npm audit; fi
+- if audit-ci -h -a 813 -w @salesforce/sfdx-lwc-jest; then echo Passed; else npm audit; fi
 # - echo "Which error log are you checking today? "
 #   read answer
 #   if [ -f /opt/logs/$answer*.errors ]
