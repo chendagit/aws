@@ -12,10 +12,12 @@ notifications:
 jobs:
   include:
     - script:
+      if: type=push
       name: "test1"
       script:
       - npm -v
     - script:
+      if: type=cron
       name: "test2"
       script:
       - npm -v
