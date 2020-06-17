@@ -12,17 +12,19 @@ notifications:
 jobs:
   include:
   - script:
-    - npm -v
-    - echo "Push"
     if: type=push
     name: test1
+    script:
+      - npm -v
+      - echo "Push"
   - script:
-    - npm -v
-    - echo "Cron"
     if: type=cron
     name: test2
+    script:
+      - npm -v
+      - echo "Cron"
   - script:
-    - npm -v
-    - echo "Cron"
     if: type=pull_request
     name: test3
+      - npm -v
+      - echo "Pull Request"
