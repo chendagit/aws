@@ -7,13 +7,22 @@ cache:
   directories:
     - $HOME/.npm
 jobs:
-  if: type=push
-    include:
-      - script:
-        name: "test1"
-        script:
-        - npm -v
-      - script:
-        name: "test2"
-        script:
-        - npm -v
+  include:
+    - script:
+      if: type=push
+      name: "test1"
+      script:
+      - npm -v
+      - echo "Push"
+    - script:
+      if: type=cron
+      name: "test2"
+      script:
+      - npm -v
+      - echo "Cron"
+    - script:
+      if: type=pull_request
+      name: "test3"
+      script:
+      - npm -v
+      - echo "Cron"
