@@ -11,13 +11,11 @@ notifications:
     secure: T47Q3rEAYeTu7W2FswSx+b4xDlKuFha0sMbLy2wCTjWAYkr2Y8M3VnIJjNlqWylC9AGMQ5yKQwgkdgiBmfBIehEuZbGJN+oLsSUTkQ7kpWY/Kavu7qapRn/oivaE/IFdtN7DTimZFBnRM4WBzW0CmssvTFDqMWFOAd3nFkRitNM00aqI+/fe3meTC+eDwhsQ+Jg6ZuQqfZA5Xjqcd8LdhgdnGfp+5h8B3FXHHRThEAYKUkuBjhronbe+hbm8tyfMSUFEkfQ+mvq61lLLrLSQHHZBPS9zoR6ad4/fAX4F16Z6k8IEIsAX2oRx8mYXyc+8vQUlJassuDjkfeHTRBl+/pLSeHshTjjlcjpEWdibYaC10nhfPwwQWlPuE1UcnWo33d5L6BbaDRtEdab85n+iHtXU/YNgVoYZxV6Lpg+oorz7FCO1CJKsu6yT9/26Azqg4hAVMt/Whjp+EcKRgDh0wUmJUT97fxKWpbuc8ycG0iVdwdG0E1tsr/JyVWGtd1Ha4ZccGw0guW4rlBO8gsU9Eaoy1u0lGcDvb9UnkXIok62f5edAK+Wuw6x2ElkF+NqXnGJLyiN3VBbg24lQcsRd9wHOZO85tD/HyjgDqENBRcEjSCumg7z9YAA4/65Gc0UOdb0Pekdl6YZHDePQk7soo0rQAIhw+miuwKIVqjI+0ZE=
 jobs:
   include:
-    if: type = push
     - script:
-      name: "Functionality Test Automation"
+      name: "test1"
       script:
       - npm -v
-    if: type = cron
     - script:
-      name: "Functionality Test Automation"
+      name: "test2"
       script:
       - npm -v
