@@ -26,5 +26,6 @@ jobs:
   - script:
     if: type=pull_request
     name: test3
+    script:
       - npm -v
       - echo "Pull Request"
