@@ -38,6 +38,9 @@ notifications:
         - "Cron Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch}  by %{author} %{result} in %{duration}"
 before_script:
 - npm install mocha
+- npm -v
+- node -v
+- ls
 jobs:
   include:
   - script:
