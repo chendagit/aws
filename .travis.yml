@@ -45,19 +45,25 @@ jobs:
   include:
   - script:
     if: type=push
-    name: test1
+    name: Push
     script:
       - npm -v
       - echo "Push"
   - script:
     if: type=cron
-    name: test2
+    name: Cron1
     script:
       - npm -v
-      - echo "Cron"
+      - echo "Cron1"
+  - script:
+    if: type=cron
+    name: Cron2
+    script:
+      - npm -v
+      - echo "Cron2"
   - script:
     if: type=pull_request
-    name: test3
+    name: PR
     script:
       - npm -v
       - echo "Pull Request"
