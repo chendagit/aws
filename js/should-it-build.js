@@ -19,7 +19,7 @@ const parseResponse = (res) => {
     let labels
     try {
         labels = JSON.parse(res).labels
-        console.log ("Labels: " + labels)
+        console.log ("Labels: " + res)
         if (!labels || labels.length === 0) {
             console.log(`no labels found attached to PR ${pullRequestId}`)
             process.exit(1)
