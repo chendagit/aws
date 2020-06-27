@@ -2,7 +2,7 @@
 
 const https = require('https')
 const bugLabelId = 1195070468
-const pullRequestId = process.argv[2]
+const pullRequestId = process.env.TRAVIS_PULL_REQUEST
 
 if (!pullRequestId) {
     console.log('Missing argument: pull request id')
