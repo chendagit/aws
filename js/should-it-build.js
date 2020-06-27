@@ -1,10 +1,10 @@
 'use strict'
 
 const https = require('https')
-const bugLabelId = 2164230220
+const bugLabelId = 2164192812
 const pullRequestId = process.env.TRAVIS_PULL_REQUEST
 
-const pullRequestUrl = `/repos/chendagit/aws/pulls/${pullRequestId}`
+const pullRequestUrl = `/repos/decsond/sfdx/pulls/${pullRequestId}`
 
 const options = {
     hostname: 'api.github.com',
