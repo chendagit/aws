@@ -1,7 +1,7 @@
 'use strict'
 
 const https = require('https')
-const ciEnabledLabelId = 861719997
+const ciEnabledLabelId = 1195070468
 // Example Github API Pull Request URL - 'https://github.com/DFEAGILEDEVOPS/MTC/pull/566'
 const pullRequestId = process.argv[2]
 
