@@ -10,7 +10,7 @@ if (!pullRequestId) {
     process.exit(1)
 }
 
-const pullRequestUrl = `/repos/dfeagiledevops/mtc/pulls/${pullRequestId}`
+const pullRequestUrl = `/repos/chendagit/aws/pull/${pullRequestId}`
 
 const options = {
     hostname: 'api.github.com',
