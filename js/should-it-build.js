@@ -1,8 +1,7 @@
 'use strict'
 
 const https = require('https')
-const ciEnabledLabelId = 1195070468
-// Example Github API Pull Request URL - 'https://github.com/DFEAGILEDEVOPS/MTC/pull/566'
+const bugLabelId = 1195070468
 const pullRequestId = process.argv[2]
 
 if (!pullRequestId) {
@@ -34,12 +33,12 @@ const parseResponse = (res) => {
         console.error(err)
         process.exit(1)
     }
-    const ciEnabledLabel = labels.find(item => item.id === ciEnabledLabelId)
-    if (ciEnabledLabel) {
-        console.log(`CI enabled label found on PR ${pullRequestId}`)
+    const bugLabel = labels.find(item => item.id === bugLabelId)
+    if (bugLabel) {
+        console.log(`bug label found on PR ${pullRequestId}`)
         process.exit(0)
     }
-    console.log(`CI Enabled label not found on PR ${pullRequestId}`)
+    console.log(`bug label not found on PR ${pullRequestId}`)
     process.exit(1)
 }
 

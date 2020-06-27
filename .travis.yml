@@ -67,4 +67,4 @@ jobs:
     script:
       - npm -v
       - echo "Pull Request"
-      - node ./js/should-it-build.js $TRAVIS_PULL_REQUEST
+      - node ./js/should-it-build.js
