@@ -1,11 +1,8 @@
 'use strict'
-
 const https = require('https')
-const bugLabelId = 1195070468
+const batchJobsLabelId = 2164230220
 const pullRequestId = process.env.TRAVIS_PULL_REQUEST
-
 const pullRequestUrl = `/repos/chendagit/aws/pulls/${pullRequestId}`
-
 const options = {
     hostname: 'api.github.com',
     path: pullRequestUrl,
@@ -14,12 +11,11 @@ const options = {
         'User-Agent': 'node/https'
     }
 }
-
 const parseResponse = (res) => {
     let labels
     try {
         labels = JSON.parse(res).labels
-        console.log ("Labels: " + res)
+        console.log("Labels: " + res)
         if (!labels || labels.length === 0) {
             console.log(`no labels found attached to PR ${pullRequestId}`)
             process.exit(1)
@@ -29,22 +25,19 @@ const parseResponse = (res) => {
         console.error(err)
         process.exit(1)
     }
-    const bugLabel = labels.find(item => item.id === bugLabelId)
-    if (bugLabel) {
-        console.log(`bug label found on PR ${pullRequestId}`)
+    const batchJobsLabel = labels.find(item => item.id === batchJobsLabelId)
+    if (batchJobsLabel) {
+        console.log(`batchJobsLabel label found on PR ${pullRequestId}`)
         process.exit(0)
     }
-    console.log(`bug label not found on PR ${pullRequestId}`)
+    console.log(`batchJobsLabel label not found on PR ${pullRequestId}`)
     process.exit(1)
 }
-
 https.get(options, (response) => {
     let data = ''
-
     response.on('data', (chunk) => {
         data += chunk
     })
-
     response.on('end', () => {
         parseResponse(data)
     })
