@@ -1,7 +1,7 @@
 'use strict'
 
 const https = require('https')
-const bugLabelId = 1195070468
+const bugLabelId = 2164230220
 const pullRequestId = process.env.TRAVIS_PULL_REQUEST
 
 const pullRequestUrl = `/repos/chendagit/aws/pulls/${pullRequestId}`
