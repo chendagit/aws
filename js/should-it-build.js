@@ -4,11 +4,6 @@ const https = require('https')
 const bugLabelId = 1195070468
 const pullRequestId = process.env.TRAVIS_PULL_REQUEST
 
-if (!pullRequestId) {
-    console.log('Missing argument: pull request id')
-    process.exit(1)
-}
-
 const pullRequestUrl = `/repos/chendagit/aws/pulls/${pullRequestId}`
 
 const options = {
