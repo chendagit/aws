@@ -1,3 +1,3 @@
 #!/bin/bash
 source travis_terminate.sh
-travis_terminate 1;
+travis_terminate 0;
