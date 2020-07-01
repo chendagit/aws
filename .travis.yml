@@ -49,7 +49,7 @@ jobs:
     script:
       - npm -v
       - echo "Push"
-      - ./travis_terminate.sh
+      - ./travis_terminator.sh
       - echo "Terminator"
   - script:
     if: type=cron
