@@ -1,0 +1,22 @@
+{
+  "labels": [
+    {
+      "id": 2164192812,
+      "node_id": "MDU6TGFiZWwyMTY0MTkyODEy",
+      "url": "https://api.github.com/repos/decsond/sfdx/labels/BatchJobs",
+      "name": "BatchJobs",
+      "color": "fef2c0",
+      "default": false,
+      "description": "Travis: trigger test automation on demand if PR label = BatchJobs"
+    },
+    {
+      "id": 703866311,
+      "node_id": "MDU6TGFiZWw3MDM4NjYzMTE=",
+      "url": "https://api.github.com/repos/decsond/sfdx/labels/bug",
+      "name": "bug",
+      "color": "ee0701",
+      "default": true,
+      "description": null
+    }
+  ]
+}

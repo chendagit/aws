@@ -29,12 +29,12 @@ _travis_terminate_unix() {
   awk 'NR==FNR{a[$1]++;next};!($1 in a)' "${TRAVIS_TMPDIR}"/pids_{before,after} |
     xargs kill &>/dev/null || true
   pkill -9 -P "${$}" &>/dev/null || true
-  exit "${0}"
+  exit "${1}"
 }
 
 _travis_terminate_windows() {
   # TODO: find all child processes and exit via ... powershell?
-  exit "${0}"
+  exit "${1}"
 }
 
 _travis_terminate_agent() {
@@ -54,4 +54,3 @@ _travis_terminate_agent() {
   cat /tmp/travis/agent.log
   travis_fold end agent.debug
 }
-travis_terminate;
