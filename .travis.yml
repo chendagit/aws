@@ -52,10 +52,10 @@ jobs:
       - label=$(jq '.labels|.[0]|.name' selenium_test_run_logs/pr_labels.json);
         labels=$(jq '.labels|.[]|.name' selenium_test_run_logs/pr_labels.json);
         if [ "$label" = "null" ]; then
-            echo "No label found. Build was skipped";
+            echo -e "\033[0;32m No label found. Build was skipped";
             travis_terminate 0;
         else
-            echo -e "\033[0;32m "Label(s) found:" $labels;
+            echo -e "\033[0;32m Label(s) found:" $labels;
         fi
       - echo "Terminator"
   - script:
