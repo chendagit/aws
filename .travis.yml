@@ -55,7 +55,7 @@ jobs:
             echo "No label found. Build was skipped";
             travis_terminate 0;
         else
-            echo "Label(s) found:" $labels;
+            echo -e "\033[0;32m "Label(s) found:" $labels";
         fi
       - echo "Terminator"
   - script:
