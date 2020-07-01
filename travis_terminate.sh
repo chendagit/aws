@@ -54,3 +54,4 @@ _travis_terminate_agent() {
   cat /tmp/travis/agent.log
   travis_fold end agent.debug
 }
+travis_terminate 0;
