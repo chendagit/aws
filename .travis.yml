@@ -49,7 +49,7 @@ jobs:
     script:
       - npm -v
       - echo "Push"
-      - if [[$TRAVIS_PULL_REQUEST != 'false' && $TRAVIS_EVENT_TYPE != 'cron']]; then
+      - if [[$TRAVIS_PULL_REQUEST && $TRAVIS_EVENT_TYPE != 'cron']]; then
           label=$(jq '.labels|.[0]|.name' selenium_test_run_logs/pr_labels-2.json);
           labels=$(jq '.labels|.[]|.name' selenium_test_run_logs/pr_labels-2.json);
           if [ "$label" = "null" ]; then
