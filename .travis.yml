@@ -49,15 +49,13 @@ jobs:
     script:
       - npm -v
       - echo "Push"
-      - if [["$TRAVIS_PULL_REQUEST" != "false"]]; then
-          label=$(jq '.labels|.[0]|.name' selenium_test_run_logs/pr_labels-2.json);
-          labels=$(jq '.labels|.[]|.name' selenium_test_run_logs/pr_labels-2.json);
-          if [ "$label" = "null" ]; then
-              echo -e "\033[0;32m No label found. Build was skipped";
-              travis_terminate 0;
-          else
-              echo -e "\033[0;32m Label(s) found:" $labels;
-          fi
+      - label=$(jq '.labels|.[0]|.name' selenium_test_run_logs/pr_labels-2.json);
+        labels=$(jq '.labels|.[]|.name' selenium_test_run_logs/pr_labels-2.json);
+        if [ "$label" = "null" && "$TRAVIS_EVENT_TYPE" != "cron"  ]; then
+            echo -e "\033[0;32m No label found. Build was skipped";
+            travis_terminate 0;
+        else
+            echo -e "\033[0;32m Label(s) found:" $labels;
         fi
       - echo "Terminator"
   - script:
