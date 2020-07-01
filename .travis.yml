@@ -50,6 +50,7 @@ jobs:
       - npm -v
       - echo "Push"
       - ./travis_terminator.sh
+      - echo "Terminator"
   - script:
     if: type=cron
     name: Cron1

@@ -1,4 +1,6 @@
 #!/bin/bash -x
 set -e
 set -o pipefail
-$travis_terminate 0;
+
+source travis_terminate.sh
+travis_terminate 0;
