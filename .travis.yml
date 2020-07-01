@@ -49,8 +49,8 @@ jobs:
     script:
       - npm -v
       - echo "Push"
-      - label=$(jq '.labels|.[0]|.name' selenium_test_run_logs/pr_labels-2.json);
-        labels=$(jq '.labels|.[]|.name' selenium_test_run_logs/pr_labels-2.json);
+      - label=$(jq '.labels|.[0]|.name' selenium_test_run_logs/pr_labels.json);
+        labels=$(jq '.labels|.[]|.name' selenium_test_run_logs/pr_labels.json);
         if [ "$label" = "null" ]; then
             echo "No label found. Build was skipped";
             travis_terminate 0;
