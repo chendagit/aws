@@ -32,8 +32,8 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
     - name: Get PR labels
-        run: 'curl https://api.github.com/repos/chendagit/aws/pulls/7 > pr_labels.json'
+      run: 'curl https://api.github.com/repos/chendagit/aws/pulls/7 > pr_labels.json'
     - name: Show PR json result
-        run: cat pr_labels.json
+      run: cat pr_labels.json
     - name: PR labels
       run: node ./js/should-it-build.js
