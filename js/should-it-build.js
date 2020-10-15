@@ -1,7 +1,7 @@
 'use strict'
 const https = require('https')
 const batchJobsLabelId = 2164230220
-const pullRequestId = process.env.TRAVIS_PULL_REQUEST
+const pullRequestId = 7
 const pullRequestUrl = `/repos/chendagit/aws/pulls/${pullRequestId}`
 const options = {
     hostname: 'api.github.com',
