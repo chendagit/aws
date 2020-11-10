@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: manual workflow
+name: manual_workflow
 env:
   pr_labels: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
 # Controls when the action will run. Triggers the workflow on push or pull request
