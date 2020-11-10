@@ -5,7 +5,7 @@ on:
       name:
         description: 'test 1'
         required: true
-        default: 'Mona the Octocat'
+        default: 'test'
       home:
         description: 'location'
         required: false
