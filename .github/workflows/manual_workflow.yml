@@ -22,6 +22,6 @@ jobs:
           ref: test-workflows
 
       # Runs a single command using the runners shell
-      - name: branch?
+      - name: branch? test
         run: git status
 
