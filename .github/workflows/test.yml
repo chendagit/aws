@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get PR labels
-        run: 'curl -H "Authorization: token ${{secrets.GITHUB_TOKEN}}" https://api.github.com/repos/chendagit/aws/pulls/${{env.pr_number}} > pr_labels.json'
+        run: 'curl https://api.github.com/repos/chendagit/aws/pulls/${{env.pr_number}} > pr_labels.json'
       - name: Show PR return result in JSON
         run: cat pr_labels.json
       - uses: actions/checkout@v2
