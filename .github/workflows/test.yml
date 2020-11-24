@@ -1,9 +1,10 @@
 name: CI
 on:
   pull_request:
-    types: [ synchronize ]
+    types: [ labeled, synchronize ]
 jobs:
   build:
+    if: ${{ github.event.label.name == 'BatchJobs' }}
     runs-on: ubuntu-latest
 
     steps:
