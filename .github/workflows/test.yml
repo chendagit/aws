@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: PR labels
-      run: echo 'test1 pr label is OK on BatchJobs'
+      run: echo 'Test1 pr label is OK on BatchJobs'
     - name: test pr label
-      run: echo 'test2 pr label is OK on BatchJobs'
+      run: echo 'Test2 pr label is OK on BatchJobs'
