@@ -15,5 +15,5 @@ jobs:
       if: ${{ github.event.label.name == 'BatchJobs' }}
       run: echo 'Test2 pr label is  on BatchJobs'
     - name: PR labels 2
-      if: ${{ github.event.label.name == 'bug' }}
+      if: ${{ github.event.label.name[1] == 'bug' }}
       run: echo 'Test2 pr label is  on bug'
