@@ -17,6 +17,6 @@ jobs:
     - name: PR labels 2
       if: ${{ github.event.label.name[1] == 'bug' }}
       run: echo 'Test2 pr label is  on bug'
-    - name: PR labels 2
-      if: ${{ github.event.label.name[] == 'bug' }}
-      run: echo 'Test2 pr label is  on all'
+    # - name: PR labels 2
+    #   if: ${{ github.event.label.name[] == 'bug' }}
+    #   run: echo 'Test2 pr label is  on all'
