@@ -37,5 +37,5 @@ jobs:
     - name: PR labels
       run: node ./js/should-it-build.js
     - name: test pr label
-      if: ${{ github.event.label.name == 'BatchJobs' || 'bug' }}
+      if: ${{ github.event.label.name == 'BatchJobs' }}
       run: echo 'test pr label is OK on BatchJobs'
