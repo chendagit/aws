@@ -36,7 +36,7 @@ jobs:
     # - name: Show PR json result
     #   run: cat pr_labels.json
     - name: PR labels
-      run: node ./js/should-it-build.js
+      run: echo 'test1 pr label is OK on BatchJobs'
     - name: test pr label
       if: ${{ github.event.label.name == 'BatchJobs' }}
-      run: echo 'test pr label is OK on BatchJobs'
+      run: echo 'test2 pr label is OK on BatchJobs'
