@@ -1,4 +1,6 @@
 name: CI
+env:
+  pr_labels: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
 on:
   pull_request:
     types: [ labeled, synchronize ]
@@ -11,10 +13,8 @@ jobs:
     - name: PR labels
       if: ${{ github.event.label.name != 'BatchJobs' }}
       run: echo 'Test1 pr label is not on BatchJobs'
-    - name:  query
-      run: github.event.label > labels.json
     - name: display query
-      run: tail -n 100 labels.json
+      run: tail -n 100 ${{env.pr_labels}}
     - name: test pr label
       if: ${{ github.event.label.name == 'BatchJobs' }}
       run: echo 'Test2 pr label is on BatchJobs'
