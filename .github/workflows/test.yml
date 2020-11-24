@@ -4,7 +4,6 @@ on:
     types: [ labeled, synchronize ]
 jobs:
   build:
-    if: ${{ github.event.label.name == 'BatchJobs' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -12,6 +11,10 @@ jobs:
     - name: PR labels
       if: ${{ github.event.label.name != 'BatchJobs' }}
       run: echo 'Test1 pr label is not on BatchJobs'
+    - name:  query
+      run: ${{ github.event.label.name}} > labels.json
+    - name: display query
+      run: tail -n 100 labels.json
     - name: test pr label
       if: ${{ github.event.label.name == 'BatchJobs' }}
       run: echo 'Test2 pr label is on BatchJobs'
