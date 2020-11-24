@@ -5,8 +5,8 @@ env:
   pr_labels: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-on:
-  pull_request:
+on: push
+  # pull_request:
       # types: [ labeled ]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,8 +34,8 @@ jobs:
     #   run: 'curl https://api.github.com/repos/chendagit/aws/pulls/${{env.pr_labels}} > pr_labels.json'
     # - name: Show PR json result
     #   run: cat pr_labels.json
-    # - name: PR labels
-    #   run: node ./js/should-it-build.js
+    - name: PR labels
+      run: node ./js/should-it-build.js
     - name: test pr label
       if: ${{ github.event.label.name == 'BatchJobs' || 'bug' }}
       run: echo 'test pr label is OK on BatchJobs'
