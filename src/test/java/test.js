@@ -1,1 +1,1 @@
-const test = 'test sync'
+const test = 'test sync2'
