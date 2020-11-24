@@ -35,9 +35,12 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-    - name: Get PR labels
-      run: 'curl https://api.github.com/repos/chendagit/aws/pulls/${{env.pr_labels}} > pr_labels.json'
-    - name: Show PR json result
-      run: cat pr_labels.json
-    - name: PR labels
-      run: node ./js/should-it-build.js
+    # - name: Get PR labels
+    #   run: 'curl https://api.github.com/repos/chendagit/aws/pulls/${{env.pr_labels}} > pr_labels.json'
+    # - name: Show PR json result
+    #   run: cat pr_labels.json
+    # - name: PR labels
+    #   run: node ./js/should-it-build.js
+    - test pr label
+      if: ${{ github.event.label.name == 'BatchJobs' }}
+      run: echo 'test pr label is OK on BatchJobs'
