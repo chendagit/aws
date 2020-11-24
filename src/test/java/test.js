@@ -1,1 +1,1 @@
-String dfdf = 'test'12
+const test = 'test'
