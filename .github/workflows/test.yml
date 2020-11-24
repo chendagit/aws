@@ -13,8 +13,10 @@ jobs:
     - name: PR labels
       if: ${{ github.event.label.name != 'BatchJobs' }}
       run: echo 'Test1 pr label is not on BatchJobs'
+    - name: query
+      run: ${{env.pr_labels}} > test.json
     - name: display query
-      run: tail -n 100 ${{env.pr_labels}}
+      run: tail -n 100 test.json
     - name: test pr label
       if: ${{ github.event.label.name == 'BatchJobs' }}
       run: echo 'Test2 pr label is on BatchJobs'
