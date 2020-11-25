@@ -1,16 +1,17 @@
 name: Default
 on:
   pull_request:
-    types: [ unlabeled, synchronize ]
+    types: [ unlabeled, synchronized ]
 jobs:
   build:
-    # if: github.event.pull_request.labels.*.name == ''
+    if: contains(github.event.pull_request.labels.*.name, 'T-Walkthrough')
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: PR unlabeled 1
       run: echo 'Test 1 pr unlabeled'
-    - name: query
-      run: '${{github.event.pull_request.labels.*.name}} > test2.json'
-    - name: show query
-      run: cat test2.json
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
