@@ -15,6 +15,6 @@ jobs:
       run: echo 'Test 3 pr label is  on bug'
     - name: Dump GitHub context
       env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
+        GITHUB_CONTEXT: ${{ toJson(github.event.pull_request.labels) }}
       run: |
         echo "$GITHUB_CONTEXT"
