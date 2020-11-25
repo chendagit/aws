@@ -11,6 +11,6 @@ jobs:
     - name: PR unlabeled 1
       run: echo 'Test 1 pr unlabeled'
     - name: query
-      run: 'github.event.pull_request.labels.*.name > test2.json'
+      run: '${{github.event.pull_request.labels.*.name}} > test2.json'
     - name: show query
       run: cat test2.json
