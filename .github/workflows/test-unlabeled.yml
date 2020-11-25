@@ -1,7 +1,7 @@
 name: Default
 on:
   pull_request:
-    types: [ unlabeled ]
+    types: [ unlabeled, synchronized ]
 jobs:
   build:
     runs-on: ubuntu-latest
