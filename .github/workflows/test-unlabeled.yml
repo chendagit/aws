@@ -1,7 +1,7 @@
 name: Default
 on:
   pull_request:
-    types: [ unlabeled, synchronize ]
+    types: [ unlabeled, synchronized ]
 jobs:
   build:
     if: contains(github.event.pull_request.labels.*.name, '')
