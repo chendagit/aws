@@ -13,3 +13,8 @@ jobs:
     - name: PR labels 3
       if: contains(github.event.pull_request.labels.*.name, 'bug')
       run: echo 'Test 3 pr label is  on bug'
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
