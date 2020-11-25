@@ -17,4 +17,5 @@ jobs:
     #   run: echo 'Test 3 pr label is  on bug'
     - name: get labels
       run: |
-        echo "$LABELS"
+        echo "$LABELS" > labels.json
+        cat labels.json
