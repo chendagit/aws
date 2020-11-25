@@ -4,6 +4,7 @@ on:
     types: [ unlabeled, synchronized ]
 jobs:
   build:
+    if: github.event.pull_request.labels.*.name == ''
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
