@@ -4,7 +4,7 @@ on:
     types: [ labeled, synchronize ]
 env:
       LABELS: ${{ toJson(github.event.pull_request.labels.*.name) }}
-      LABELS2: ${{ toJson(github.event.pull_request.labels.*.description) }}
+      LABELS2: ${{ toJson(github.event.pull_request.labels.*.name) }}
 jobs:
   build:
     runs-on: ubuntu-latest
