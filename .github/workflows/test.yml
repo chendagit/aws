@@ -3,7 +3,7 @@ on: [ pull_request, workflow_dispatch ]
 env:
       LABELS: ${{ toJson(github.event.pull_request.labels.*.description) }}
       LABELS2: ${{ toJson(github.event.action) }}
-      LABELS3: ${{ github.event.pull_request.labels.*.name }}
+      LABELS3: ${{ toJson(github.event.pull_request.labels.*.name) }}
 jobs:
   build:
     if: ${{ github.event.pull_request.labels.*.name != 'bug' }}
