@@ -1,7 +1,7 @@
 name: CI-pr-label-manual
 on:
   pull_request:
-    type: [labeled, synchronize]
+    types: [labeled, unlabeled, synchronize]
   workflow_dispatch:
 env:
       LABELS: ${{ toJson(github.event.pull_request.labels.*.description) }}
