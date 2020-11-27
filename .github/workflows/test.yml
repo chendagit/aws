@@ -19,3 +19,5 @@ jobs:
       run: |
         echo "$LABELS" > labels.json
         cat labels.json
+    - name: npm install
+      run: npm install
