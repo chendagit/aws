@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    # - name: PR labels 2
-    #   if: contains(github.event.pull_request.labels.*.name, 'BatchJobs')
-    #   run: echo 'Test 2 pr label is  on BatchJobs'
-    # - name: PR labels 3
-    #   if: contains(github.event.pull_request.labels.*.name, 'bug')
-    #   run: echo 'Test 3 pr label is  on bug'
+    - name: PR labels 2
+      if: contains(github.event.pull_request.labels.*.name, 'BatchJobs')
+      run: echo 'Test 2 pr label is  on BatchJobs'
+    - name: PR labels 3
+      if: contains(github.event.pull_request.labels.*.name, 'bug')
+      run: echo 'Test 3 pr label is  on bug'
     - name: get labels
       run: |
         echo "$LABELS" > labels.json
