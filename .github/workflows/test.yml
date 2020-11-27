@@ -6,7 +6,7 @@ env:
       LABELS3: ${{ toJson(github.event.pull_request.labels.*.name) }}
 jobs:
   build:
-    if: ${{ github.event.pull_request.labels.*.name != 'bug' }}
+    if: contains(github.event.pull_request.labels.*.name, 'bug') return false
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
