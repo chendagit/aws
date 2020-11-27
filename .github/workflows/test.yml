@@ -3,9 +3,10 @@ on: [ pull_request, workflow_dispatch ]
 env:
       LABELS: ${{ toJson(github.event.pull_request.labels.*.description) }}
       LABELS2: ${{ toJson(github.event.action) }}
+      LABELS3: ${{ github.event.pull_request.labels.*.name }}
 jobs:
   build:
-    # if: ${{ github.event.action == 'labeled' }}
+    if: ${{ github.event.pull_request.labels.*.name != 'bug' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -22,3 +23,6 @@ jobs:
     - name: get action event
       run: |
         echo "$LABELS2"
+    - name: get label name
+      run: |
+        echo "$LABELS3"
