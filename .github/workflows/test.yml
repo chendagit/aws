@@ -13,7 +13,7 @@ env:
 jobs:
   build:
     if: |
-      ${{ if: github.event.label.name != '' }}
+      ${{ github.event.label.name != '' }}
       ${{ ! contains(github.event.pull_request.labels.*.name, 'bug') }}
     runs-on: ubuntu-latest
     steps:
