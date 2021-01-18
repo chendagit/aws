@@ -1,0 +1,13 @@
+name: On all actions
+on:
+  workflow_dispatch:
+  pull_request:
+  schedule:
+    - cron:  '0 0 * * 0,4'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo Hello, world!
