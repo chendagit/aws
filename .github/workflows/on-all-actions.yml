@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   pull_request:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '1/5 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
