@@ -1,7 +1,7 @@
 name: cron3-test
 on:
   schedule:
-    - cron: '15 * * * *'
+    - cron:  '*/6 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
