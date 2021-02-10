@@ -11,12 +11,17 @@ on:
           required: false
           default: 'The Octoverse'
   pull_request:
+    type: [labeled]
   schedule:
     - cron: '1/5 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.7.0
+        with:
+          access_token: ${{ github.token }}
       - uses: actions/checkout@v2
       - name: Run a one-line script
         run: echo 'Hello, world!'
