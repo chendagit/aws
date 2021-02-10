@@ -11,7 +11,7 @@ on:
           required: false
           default: 'The Octoverse'
   pull_request:
-    type: [labeled]
+    types: [ labeled ]
   schedule:
     - cron: '1/5 * * * *'
 jobs:
