@@ -19,9 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.7.0
+      - uses: fauguste/auto-cancellation-running-action@0.1.4
         with:
-          access_token: ${{ github.token }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2
       - name: Run a one-line script
         run: echo 'Hello, world!'
