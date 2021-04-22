@@ -5,9 +5,16 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <properties>
-  <maven.compiler.source>1.6</maven.compiler.source>
-  <maven.compiler.target>1.6</maven.compiler.target>
-</properties><dependencies>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <poi.version>4.1.2</poi.version>
+  </properties>
+<dependencies>
+  <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>4.1.2</version>
+  </dependency>
   <dependency>
     <groupId>org.apache.struts</groupId>
     <artifactId>struts2-core</artifactId>
