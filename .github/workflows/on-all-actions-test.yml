@@ -26,4 +26,5 @@ jobs:
           echo 'Hello, world!'
           echo "github inputs - description : ${{ github.event.inputs.name }}"
           echo "github inputs - description : ${{ github.event.inputs.name.description }}"
-          node install -g $(echo "${{ github.event.inputs.name }}")
+          npm install
+          npm install -g $(echo "${{ github.event.inputs.name }}")
