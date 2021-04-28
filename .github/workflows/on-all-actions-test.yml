@@ -1,4 +1,4 @@
-name: On all actions
+name: On all actions - test
 on:
   workflow_dispatch:
     inputs:

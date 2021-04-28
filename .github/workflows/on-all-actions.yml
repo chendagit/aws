@@ -1,4 +1,4 @@
-name: On all actions - tests
+name: On all actions
 on:
   push:
   workflow_dispatch:
