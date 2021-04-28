@@ -1,6 +1,5 @@
-name: On all actions
+name: On all actions - test
 on:
-  push:
   workflow_dispatch:
     inputs:
         name:
@@ -11,6 +10,7 @@ on:
           description: 'location'
           required: false
           default: 'The Octoverse'
+  pull_request:
   schedule:
     - cron: '1/5 * * * *'
 jobs:
